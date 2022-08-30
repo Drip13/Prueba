@@ -25,11 +25,11 @@ class Empleado extends Model
 {
     
     static $rules = [
-		'nombre1' => 'required',
-		'apellido1' => 'required',
-		'apellido2' => 'required',
-		'emailempleado' => 'required',
-		'telempleado' => 'required',
+		'nombre1' => 'required|string|max:50',
+		'apellido1' => 'required|string|max:25',
+    'apellido2' => 'nullable',
+		'emailempleado' => 'required|email',
+		'telempleado' => 'required|numeric',
 		'empresa_id' => 'required',
     ];
 

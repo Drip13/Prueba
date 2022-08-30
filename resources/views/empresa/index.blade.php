@@ -13,12 +13,12 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Empresas') }}
+                                @lang('messages.companies')
                             </span>
 
                              <div class="float-right">
                                  <a href="{{ route('empresas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                    {{ __('Agregar nueva empresa') }}
+                                    @lang('messages.addcompany')
                                 </a>
                               </div>
                         </div>
@@ -28,20 +28,24 @@
                             <p>{{ $message }}</p>
                         </div>
                     @endif
+                    @if ($message = Session::get('dele'))
+                        <div class="alert alert-danger" role="alert">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif
 
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>ID</th>
-                                        
-										<th>Nombre</th>
-										<th>Dirección</th>
-										<th>Correo</th>
-										<th>Telefono</th>
-										<th>Logo</th>
-										<th>Sitio</th>
+                                        <th>@lang('messages.compid')</th>
+										<th>@lang('messages.compname')</th>
+										<th>@lang('messages.compadress')</th>
+										<th>@lang('messages.compemail')</th>
+										<th>@lang('messages.comptel')</th>
+										<th>@lang('messages.complogo')</th>
+										<th>@lang('messages.compweb')</th>
 
                                         <th></th>
                                     </tr>
@@ -60,11 +64,11 @@
 
                                             <td>
                                                 <form action="{{ route('empresas.destroy',$empresa->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('empresas.show',$empresa->id) }}"><i class="fa fa-fw fa-eye"></i> Detalles</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('empresas.edit',$empresa->id) }}"><i class="fa fa-fw fa-edit"></i> Actualizar</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('empresas.show',$empresa->id) }}"><i class="fa fa-fw fa-eye"></i>@lang('messages.view')</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('empresas.edit',$empresa->id) }}"><i class="fa fa-fw fa-edit"></i>@lang('messages.update')</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i>@lang('messages.delete')</button>
                                                 </form>
                                             </td>
                                         </tr>

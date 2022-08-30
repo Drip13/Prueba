@@ -12,10 +12,10 @@
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <div class="float-left">
-                                <span class="card-title">Detalles de la Empresa</span>
+                                <span class="card-title">@lang('messages.companyshow')</span>
                             </div>
                             <div class="float-right">
-                                <a class="btn btn-danger btn-sm" href="{{ route('empresas.index') }}"> Atrás</a>
+                                <a class="btn btn-danger btn-sm" href="{{ route('empresas.index') }}">@lang('messages.back')</a>
                             </div>
                         </div>
                     </div>
@@ -23,28 +23,28 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Nombre de la empresa:</strong>
+                            <strong>@lang('messages.compname'):</strong>
                             {{ $empresa->nombrempresa }}
                         </div>
                         <div class="form-group">
-                            <strong>Dirección:</strong>
+                            <strong>@lang('messages.compadress'):</strong>
                             {{ $empresa->direccion }}
                         </div>
                         <div class="form-group">
-                            <strong>Correo Electrónico:</strong>
+                            <strong>@lang('messages.compemail'):</strong>
                             {{ $empresa->emailempresa }}
                         </div>
                         <div class="form-group">
-                            <strong>Telempresa:</strong>
+                            <strong>@lang('messages.comptel'):</strong>
                             {{ $empresa->telempresa }}
                         </div>
                         <div class="form-group">
-                            <strong>Logo:</strong>
+                            <strong>@lang('messages.complogo'):</strong>
                             <img src="{{ asset('uploads').'/'.$empresa->logo}}" width="300" >
                         </div>
                         <div class="form-group">
                             <br>
-                            <strong>Sitio Web:</strong>
+                            <strong>@lang('messages.compweb'):</strong>
                             {{ $empresa->web }}
                         </div>
                     </div>

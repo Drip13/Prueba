@@ -12,35 +12,35 @@
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <div class="float-left">
-                                <span class="card-title">Detalles del empleado</span>
+                                <span class="card-title">@lang('messages.empshow')</span>
                             </div>
-                            <a href="{{ route('empleados.index') }}" class="btn btn-danger btn-sm"  data-placement="left">{{ __('Atrás') }}</a>
+                            <a href="{{ route('empleados.index') }}" class="btn btn-danger btn-sm"  data-placement="left">@lang('messages.back')</a>
                         </div>
                     </div>
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Nombres:</strong>
+                            <strong>@lang('messages.empname'):</strong>
                             {{ $empleado->nombre1 }}
                         </div>
                         <div class="form-group">
-                            <strong>Primer Apellido:</strong>
+                            <strong>@lang('messages.emplastname'):</strong>
                             {{ $empleado->apellido1 }}
                         </div>
                         <div class="form-group">
-                            <strong>Segundo Apellido:</strong>
+                            <strong>@lang('messages.emplastname2'):</strong>
                             {{ $empleado->apellido2 }}
                         </div>
                         <div class="form-group">
-                            <strong>Correo:</strong>
+                            <strong>@lang('messages.empemail'):</strong>
                             {{ $empleado->emailempleado }}
                         </div>
                         <div class="form-group">
-                            <strong>Telefono:</strong>
+                            <strong>@lang('messages.emptel'):</strong>
                             {{ $empleado->telempleado }}
                         </div>
                         <div class="form-group">
-                            <strong>Empresa:</strong>
+                            <strong>@lang('messages.empcompany'):</strong>
                             {{ $empleado->empresa_id }}
                         </div>
 

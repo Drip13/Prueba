@@ -12,8 +12,8 @@
                     <div class="card card-default">
                         <div class="card-header">
                             <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span class="card-title">Creación de empleado</span>
-                                <a href="{{ route('empleados.index') }}" class="btn btn-danger btn-sm"  data-placement="left">{{ __('Cancelar') }}</a>
+                                <span class="card-title">@lang('messages.employeecreate')</span>
+                                <a href="{{ route('empleados.index') }}" class="btn btn-danger btn-sm"  data-placement="left">@lang('messages.cancel')</a>
                         </div>
                     </div>
                     <div class="card-body">

@@ -25,11 +25,11 @@ class Empresa extends Model
 {
     
     static $rulesCreate = [
-		'nombrempresa' => 'required',
-		'direccion' => 'required',
-		'emailempresa' => 'required',
-		'telempresa' => 'required',
-		'logo' => 'required',
+		'nombrempresa' => 'required|string|max:70',
+		'direccion' => 'required|string',
+		'emailempresa' => 'required|email',
+		'telempresa' => 'required|numeric',
+		'logo' => 'required| max:10000|mimes:jpeg,png,jpg',
 		'web' => 'required',
     ];
 

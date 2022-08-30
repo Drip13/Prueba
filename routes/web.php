@@ -17,7 +17,9 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Auth::routes();
+Route::get('/set_language/{lang}', [App\Http\Controllers\Controller::class, 'set_language'])->name('set_language')->middleware('auth');
+
+Auth::routes(["register" => false]);
 
 Route::resource('empleados', App\Http\Controllers\EmpleadoController::class)->middleware('auth');
 Route::resource('empresas', App\Http\Controllers\EmpresaController::class)->middleware('auth');

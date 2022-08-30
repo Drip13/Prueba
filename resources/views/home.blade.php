@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Inicio') }}</div>
+                <div class="card-header">@lang('messages.dashboard')</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,9 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    {{ __('Bienvenido') }} <b>{{Auth::user()->name}}</b> </br>
-                    {{__('Su id de usuario es')}} <b>{{Auth::user()->id}}</b> </br>
-                    {{__('Su correo eléctronico de registro es')}} <b>{{Auth::user()->email}}</b>
+                    @lang('messages.welcome') <b>{{Auth::user()->name}}</b> </br>
+                    @lang('messages.messageid') <b>{{Auth::user()->id}}</b> </br>
+                    @lang('messages.messageemail') <b>{{Auth::user()->email}}</b>
                 </div>
             </div>
         </div>

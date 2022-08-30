@@ -19,7 +19,7 @@ class Empleados extends Migration
             $table->timestamps();
             $table->string('nombre1');
             $table->string('apellido1');
-            $table->string('apellido2');
+            $table->string('apellido2')->nullable();
             $table->string('emailempleado')->unique();
             $table->bigInteger('telempleado');
             $table->bigInteger('empresa_id')->unsigned();

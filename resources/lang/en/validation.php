@@ -99,7 +99,7 @@ return [
     'multiple_of' => 'The :attribute must be a multiple of :value.',
     'not_in' => 'The selected :attribute is invalid.',
     'not_regex' => 'The :attribute format is invalid.',
-    'numeric' => 'The :attribute must be a number.',
+    'numeric' => 'The :attribute must be a numeric value.',
     'password' => 'The password is incorrect.',
     'present' => 'The :attribute field must be present.',
     'prohibited' => 'The :attribute field is prohibited.',
@@ -107,7 +107,8 @@ return [
     'prohibited_unless' => 'The :attribute field is prohibited unless :other is in :values.',
     'prohibits' => 'The :attribute field prohibits :other from being present.',
     'regex' => 'The :attribute format is invalid.',
-    'required' => 'The :attribute field is required.',
+    'required' => 'The :attribute is required',
+    'empresa_id.required' => 'La :attribute es obligatoria',
     'required_array_keys' => 'The :attribute field must contain entries for: :values.',
     'required_if' => 'The :attribute field is required when :other is :value.',
     'required_unless' => 'The :attribute field is required unless :other is in :values.',
@@ -158,6 +159,18 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'nombre1' => 'first name',
+        'apellido1' => 'last name',
+        'emailempleado' => 'employee email',
+        'telempleado' => 'employee phone number',
+        'empresa_id' => 'company',
+        'nombrempresa' =>'company name',
+        'emailempresa' => 'company email',
+        'telempresa' => 'company phone number',
+        'sitio_web' => 'company web site',
+        'direccion' => 'adress',
+        'web' => 'Web Site',
+    ],
 
 ];

@@ -2,9 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Middleware\Language;
+use App\Mail\NotificacionEmpresa;
 use App\Models\Empresa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Mail;
+
+
 
 /**
  * Class EmpresaController
@@ -46,6 +52,10 @@ class EmpresaController extends Controller
     {
         request()->validate(Empresa::$rulesCreate);
         $empresa = request()->except('_token');
+        
+        $mensaje=[
+            'logo.required'=>'El logo es obligatorio'
+        ];
 
         if($request->hasFile('logo')){
             $empresa['logo']=$request->file('logo')->store('','public');
@@ -53,8 +63,11 @@ class EmpresaController extends Controller
 
         Empresa::insert($empresa);
 
+        // envío del correo
+        Mail::to(request('emailempresa'))->send(new NotificacionEmpresa($empresa));
+
         return redirect()->route('empresas.index')
-            ->with('success', 'Empresa creada correctamente.');
+            ->with('success', __('messages.companycreated'));
     }
 
     /**
@@ -105,7 +118,7 @@ class EmpresaController extends Controller
         
 
         return redirect()->route('empresas.index')
-            ->with('success', 'Empresa actualizada correctamente');
+            ->with('success', __("messages.companyupdated"));
     }
 
     /**
@@ -118,6 +131,6 @@ class EmpresaController extends Controller
         $empresa = Empresa::find($id)->delete();
 
         return redirect()->route('empresas.index')
-            ->with('info', 'Empresa deleted successfully');
+            ->with('dele', __('messages.companydeleted'));
     }
 }

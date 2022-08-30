@@ -1,36 +1,43 @@
 <div class="box box-info padding-1">
     <div class="box-body">
         <div class="form-group">
-            {{ Form::label('Nombre de la empresa') }}
-            {{ Form::text('nombrempresa', $empresa->nombrempresa, ['class' => 'form-control' . ($errors->has('nombrempresa') ? ' is-invalid' : ''), 'placeholder' => 'Nombre de la empresa']) }}
-            {!! $errors->first('nombrempresa', '<div class="invalid-feedback">El nombre de la empresa es requerido</div>') !!}
+            @lang('messages.compname')
+            {{ Form::text('nombrempresa', $empresa->nombrempresa, ['class' => 'form-control' . ($errors->has('nombrempresa') ? ' is-invalid' : ''), 'placeholder' => __('messages.compname')]) }}
+            {!! $errors->first('nombrempresa', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('Dirección') }}
-            {{ Form::text('direccion', $empresa->direccion, ['class' => 'form-control' . ($errors->has('direccion') ? ' is-invalid' : ''), 'placeholder' => 'Dirección']) }}
-            {!! $errors->first('direccion', '<div class="invalid-feedback">La dirección de la empresa es requerido</div>') !!}
+            @lang('messages.compadress')
+            {{ Form::text('direccion', $empresa->direccion, ['class' => 'form-control' . ($errors->has('direccion') ? ' is-invalid' : ''), 'placeholder' => __('messages.compadress')]) }}
+            <div class="invalid-feedback">{!! $errors->first('direccion', __('messages.erroradress')) !!}</div>
+            
         </div>
         <div class="form-group">
-            {{ Form::label('Correo electrónico') }}
-            {{ Form::text('emailempresa', $empresa->emailempresa, ['class' => 'form-control' . ($errors->has('emailempresa') ? ' is-invalid' : ''), 'placeholder' => 'Correo electrónico']) }}
-            {!! $errors->first('emailempresa', '<div class="invalid-feedback">El correo de la empresa es requerido</div>') !!}
+            @lang('messages.compemail')
+            {{ Form::email('emailempresa', $empresa->emailempresa, ['class' => 'form-control' . ($errors->has('emailempresa') ? ' is-invalid' : ''), 'placeholder' => __('messages.compemail')]) }}
+            {!! $errors->first('emailempresa', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('Telefono') }}
-            {{ Form::tel('telempresa', $empresa->telempresa, ['class' => 'form-control' . ($errors->has('telempresa') ? ' is-invalid' : ''), 'placeholder' => 'Telefono de la empresa']) }}
-            {!! $errors->first('telempresa', '<div class="invalid-feedback">El telefono de la empresa es obligatorio</div>') !!}
+            @lang('messages.comptel')
+            {{ Form::tel('telempresa', $empresa->telempresa, ['class' => 'form-control' . ($errors->has('telempresa') ? ' is-invalid' : ''), 'placeholder' => __('messages.comptel')]) }}
+            {!! $errors->first('telempresa', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('Logo') }} </br>
+            @lang('messages.complogo') </br>
             @if (isset($empresa->logo))
             <img src="{{ asset('uploads').'/'.$empresa->logo}}" width="200px"> 
             @endif
             <input type="file" name="logo" value="" id="logo">
+            @if ($errors->has('logo'))
+            <div class="alert alert-danger" role="alert">
+                <ul><li>@lang('messages.errorlogo')</li></ul>
+            </div>
+            @endif
         </div>
         <div class="form-group">
-            {{ Form::label('Sitio Web') }}
-            {{ Form::text('web', $empresa->web, ['class' => 'form-control' . ($errors->has('web') ? ' is-invalid' : ''), 'placeholder' => 'Sitio Web']) }}
-            {!! $errors->first('web', '<div class="invalid-feedback">El sitio web de la empresa es obligatorio</div>') !!}
+            @lang('messages.compweb')
+            {{ Form::text('web', $empresa->web, ['class' => 'form-control' . ($errors->has('web') ? ' is-invalid' : ''), 'placeholder' => __('messages.compweb')]) }}
+            <div class="invalid-feedback">{!! $errors->first('web', ':message') !!}</div>
+            
         </div>
 
         <br>
@@ -39,6 +46,6 @@
             
             <div class="box-footer mt20">
         </div>
-        <button type="submit" class="button1">Enviar</button>
+        <button type="submit" class="button1">@lang('messages.send')</button>
     </div>
 </div>
