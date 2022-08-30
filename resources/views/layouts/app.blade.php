@@ -47,11 +47,20 @@
                     @endif
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('set_language', ['es'])}}">@lang('messages.spanish')</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"" href="{{route('set_language', ['en'])}}">@lang('messages.english')</a>
+                            </li>
+                        </li>
+
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">@lang('messages.login')</a>
                                 </li>
                             @endif
 
@@ -73,8 +82,7 @@
                                                      document.getElementById('logout-form').submit();">
                                         @lang('messages.logout')
                                     </a>
-                                    <a class="dropdown-item" href="{{route('set_language', ['es'])}}">@lang('messages.spanish')</a>
-                                    <a class="dropdown-item" href="{{route('set_language', ['en'])}}">@lang('messages.english')</a>
+                                    
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf

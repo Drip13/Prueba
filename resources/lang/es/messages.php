@@ -3,7 +3,14 @@
 return [
 
     'welcome' => 'These credentials do not match our records.',
-    'logout' => 'Cerrar Sesión',
+    'logout' => 'Cerrar sesión',
+    'login' => 'Iniciar sesión',
+    'email' => 'Correo electrónico',
+    'password' => 'Contraseña',
+    'rememberme' => 'Guardar credenciales',
+    'forgotpass' => 'He olvidado mi contraseña',
+    'resetpass' => 'Restablecer contraseña',
+    'sendlink' => 'Enviar enlace de recuperación',
     'Choose Language' => 'Seleccione su lenguaje',
     'spanish' => 'Español',
     'english' => 'Inglés',

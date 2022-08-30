@@ -4,6 +4,13 @@ return [
 
     'welcome' => 'These credentials do not match our records.',
     'logout' => 'Logout',
+    'login' => 'Login',
+    'email' => 'E-mail',
+    'password' => 'Password',
+    'rememberme' => 'Remember me',
+    'forgotpass' => 'I forgot my password',
+    'resetpass' => 'Reset password',
+    'sendlink' => 'Send link',
     'Choose Language' => 'Choose your language',
     'spanish' => 'Spanish',
     'english' => 'English',
@@ -48,6 +55,7 @@ return [
     'back' => 'Back',
     'erroradress' => 'The company adress is required',
     'errorlogo' => 'The logo is required',
+
 
 
 ];
